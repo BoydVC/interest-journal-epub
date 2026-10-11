@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Interest Journal EPUB · Boyd</title>
+<meta name="theme-color" content="#0f1c2e">
+<meta name="description" content="Turns Interest Journal markdown into a clean EPUB + in-browser chapter reader for iPhone Books offline. TokenMax burn.">
+<style>/*__CSS__*/</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="brand">
+    <div class="logo" aria-hidden="true">
+      <svg viewBox="0 0 48 48" width="44" height="44">
+        <defs>
+          <linearGradient id="ig" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#38bdf8"/>
+            <stop offset="1" stop-color="#a78bfa"/>
+          </linearGradient>
+        </defs>
+        <rect x="8" y="6" width="32" height="36" rx="4" fill="#1e293b" stroke="url(#ig)" stroke-width="2"/>
+        <path d="M14 16h20M14 22h16M14 28h18M14 34h12" stroke="#7dd3fc" stroke-width="1.8" stroke-linecap="round" opacity=".85"/>
+        <circle cx="36" cy="12" r="5" fill="#a78bfa"/>
+      </svg>
+    </div>
+    <div>
+      <h1>Interest Journal</h1>
+      <p class="tag">EPUB pack · offline chapter reader · iPhone Books</p>
+    </div>
+  </div>
+  <div class="top-actions">
+    <span class="pill soft" id="chapCount">— chapters</span>
+    <a class="btn primary sm" id="btnDownload" href="/dist/interest-journal.epub" download="interest-journal.epub">⬇ EPUB</a>
+  </div>
+</header>
+
+<nav class="tabs" role="tablist" aria-label="Journal screens">
+  <button class="tab active" data-view="cover" role="tab" aria-selected="true">📖 Cover</button>
+  <button class="tab" data-view="toc" role="tab" aria-selected="false">☰ Contents</button>
+  <button class="tab" data-view="reader" role="tab" aria-selected="false">👁 Reader</button>
+  <button class="tab" data-view="about" role="tab" aria-selected="false">About</button>
+</nav>
+
+<main>
+  <section id="view-cover" class="view active" role="tabpanel">
+    <div class="cover-stage">
+      <div class="book-cover">
+        <div class="cover-spine"></div>
+        <div class="cover-face">
+          <p class="cover-eyebrow">Boyd · Personal</p>
+          <h2 class="cover-title">Interest<br>Journal</h2>
+          <p class="cover-sub" id="coverSub">Oct 2026 excerpts</p>
+          <div class="cover-rule"></div>
+          <p class="cover-author">Christopher Boyd</p>
+          <p class="cover-meta" id="coverMeta"></p>
+        </div>
+      </div>
+      <div class="cover-side">
+        <h3>Ready for Books</h3>
+        <p class="lede">Real Interest Journal markdown from the box, packed into a valid EPUB you can AirDrop to iPhone Books — plus an in-browser chapter reader here.</p>
+        <div class="cover-actions">
+          <button type="button" class="btn primary" id="btnOpenToc">Open contents</button>
+          <a class="btn ghost" id="btnDownload2" href="/dist/interest-journal.epub" download="interest-journal.epub">Download EPUB</a>
+        </div>
+        <ul class="cover-stats" id="coverStats"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-toc" class="view" role="tabpanel">
+    <div class="toc-head">
+      <h2 class="view-title">Table of contents</h2>
+      <p class="lede">From real filenames &amp; dates on the box. Truncated chapters are marked.</p>
+      <div class="filters" id="kindFilters"></div>
+    </div>
+    <div class="toc-list" id="tocList"></div>
+  </section>
+
+  <section id="view-reader" class="view" role="tabpanel">
+    <div class="reader-bar">
+      <button type="button" class="btn ghost sm" id="btnPrev">← Prev</button>
+      <div class="reader-meta">
+        <strong id="readerTitle">Select a chapter</strong>
+        <span id="readerSub" class="hint"></span>
+      </div>
+      <button type="button" class="btn ghost sm" id="btnNext">Next →</button>
+    </div>
+    <article class="reader-body" id="readerBody">
+      <p class="lede">Pick a chapter from Contents, or open the cover and jump in.</p>
+    </article>
+  </section>
+
+  <section id="view-about" class="view" role="tabpanel">
+    <div class="about-wrap">
+      <div class="panel">
+        <h2 class="view-title">About</h2>
+        <p class="lede">Packs selected Interest Journal <code>.md</code> files into a valid EPUB (stdlib <code>zipfile</code> + XHTML) and serves an offline HTML reader. TokenMax burn · port 4313.</p>
+        <h3>Source paths</h3>
+        <ul class="about-list mono" id="sourceList"></ul>
+        <p class="hint">Excerpts are ~2–4KB per chapter when sources are large; truncated chapters say so in the body.</p>
+      </div>
+      <div class="panel soft-panel">
+        <h3>Hash routes</h3>
+        <p class="mono">#cover · #toc · #reader · #about · #ch/&lt;id&gt;</p>
+        <h3>EPUB</h3>
+        <p class="hint">File: <code>dist/interest-journal.epub</code> · mimetype + META-INF/container.xml + OEBPS nav &amp; chapters.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>TokenMax · Interest Journal EPUB</span>
+  <span id="footInfo"></span>
+</footer>
+
+<script>
+window.__CHAPTERS__ = /*__CHAPTERS__*/ null /*__/CHAPTERS__*/;
+</script>
+<script>/*__APP__*/</script>
+</body>
+</html>
