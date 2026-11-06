@@ -125,7 +125,7 @@ def chapter_xhtml(ch, title):
 def build_epub(meta, out_path):
     chapters = meta.get("chapters", [])
     book_title = meta.get("title", "Interest Journal")
-    author = meta.get("author", "Christopher Boyd")
+    author = meta.get("author", "Alex Rivera")
 
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     # EPUB requires mimetype first, stored (no compression)
